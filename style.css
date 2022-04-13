@@ -116,6 +116,7 @@ span {
     color: #2BD6B4;
 }
 
+/* For Anime Info Webpage */
 
 .buttonsAnime {
     margin-top: 20px;
@@ -162,6 +163,7 @@ span {
 }
 
 /*Anime description css taken from https://github.com/SergioCuadrado/MyAnimeList/blob/master/src/app/assets/styles/containers/DescriptionAnime.css*/
+
 .descriptionAnime {
   display: grid;
   grid-template-columns: 1fr 3fr;
