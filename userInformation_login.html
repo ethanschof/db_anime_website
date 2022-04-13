@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Anime Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Start menu header -->
+<h1>My Cool Anime Website</h1>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Anime</a>
+    <a href="#">Characters</a>
+    <a href="#">Cool Feature</a>
+    <a href="#">My Account</a>
+    <div class="animation start-home"></div>
+</nav>
+<!--Page Description-->
+
+<?php
+    session_start();
+    if(!isset($_SESSION['username']))
+    {
+?>
+
+<form className="formSignup" action="userSignin.php" method="POST">
+    <div>
+        <div className="formSignup__title-row">
+            <h3>Log In</h3>
+        </div> <br>
+
+        <div className="formSignup__body">
+            <div className="formSignup__row">
+                <label>
+                    <span>Username</span>
+                    <input type="text" name="username" placeholder="Username" autoFocus />
+                </label>
+            </div> <br>
+
+            <div className="formSignup__row">
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Password" />
+                </label>
+            </div> <br>
+
+            <div className="formSignup__row">
+                <button>Login</button> <br>
+
+                <h5><a href="userRegistration.html">Don't Have An Account?</a></h5>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<?php
+    }
+    else
+    {
+        Welcome, echo $_SESSION['username']. You are signed in.;
+    }
+?>
+
+</body>
+</html>
