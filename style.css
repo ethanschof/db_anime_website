@@ -201,3 +201,12 @@ span {
   font-weight: 700;
   font-size: 24px;
 }
+
+.formSignup {
+max-width: 1000px;
+width: 100%;
+margin: 0 auto;
+font: bold 1.4rem;
+text-align: center;
+height: 83vh;
+}
