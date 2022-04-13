@@ -203,10 +203,41 @@ span {
 }
 
 .formSignup {
-max-width: 1000px;
-width: 100%;
-margin: 0 auto;
-font: bold 1.4rem;
-text-align: center;
-height: 83vh;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    font: bold 1.4rem;
+    text-align: center;
+    height: 83vh;
 }
+
+button {
+    /* background-color: #ecf0f1; */
+    background-color: white;
+    /* color: #ecf0f1; */
+    color: var(--color-text-white);
+    border-radius: 15px;
+}
+
+button: hover {
+color: #2BD6B4;
+}
+
+a:link { 
+color: #ecf0f1;
+text-decoration: none; }
+
+
+a:visited { 
+color: #ecf0f1;
+text-decoration: none; }
+
+
+a:hover { 
+color: #2BD6B4;
+text-decoration: none; }
+
+
+a:active { 
+color: #ecf0f1;
+text-decoration: none; }
