@@ -85,6 +85,15 @@ h1 {
   font-family: 'Cherry Swash', cursive;
 }
 
+h2 {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-size: 20px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Cherry Swash', cursive;
+}
+
 h3 {
   text-align: left;
   margin: 10px 0 0px;
@@ -202,6 +211,12 @@ span {
   font-size: 24px;
 }
 
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
 .formSignup {
     max-width: 1000px;
     width: 100%;
@@ -223,22 +238,22 @@ button: hover {
 color: #2BD6B4;
 }
 
-a:link { 
+a:link {
 color: #ecf0f1;
 text-decoration: none; }
 
 
-a:visited { 
+a:visited {
 color: #ecf0f1;
 text-decoration: none; }
 
 
-a:hover { 
+a:hover {
 color: #2BD6B4;
 text-decoration: none; }
 
 
-a:active { 
+a:active {
 color: #ecf0f1;
 text-decoration: none; }
 

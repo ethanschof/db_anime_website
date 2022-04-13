@@ -18,42 +18,25 @@
 </nav>
 <!--Page Description-->
 
-<h3 style = "text-align: center">Contact Us</h3> <br>
+<h3>Contact Us</h3> <br>
 
-<form action = "contactUsSubmission.php" style = "text-align: center" className="formSignup" method = "post" onsubmit = "return validateForm()">
+<form action = "contactUsSubmission.php" method = "post" onsubmit = "return validateForm()">
 
- <div className="formSignup__body">
-            <div className="formSignup__row">
-		<label>
-    <label for = "firstName" style="color: #2BD6B4" className="formSignup__row">First Name</label>
+    <label for = "firstName">First Name</label>
     <input type = "text" id = "firstName" name = "firstName" /> <br> <br>
-		</label>
-            </div>
 
-<div className="formSignup__row">
-                <label>
-    <label for = "lastName" style="color: #2BD6B4" className="formSignup__row">Last Name</label>
+    <label for = "lastName">Last Name</label>
     <input type = "text" id = "lastName" name = "lastName" /> <br> <br>
-</label>
-            </div>
 
-<div className="formSignup__row">
-                <label>
-    <label for = "emailAddress" style="color: #2BD6B4" className="formSignup__row">Email</label>
+    <label for = "emailAddress">Email</label>
     <input type = "text" id = "emailAddress" name = "emailAddress" /> <br> <br>
-</label>
-            </div>
 
-<div className="formSignup__row">
-                <label>
-    <label for="questionOrComment" style="color: #2BD6B4" className="formSignup__row"></label>
+    <label for="questionOrComment"></label>
     <textarea id="questionOrComment" name="questionOrComment" rows="4" cols="50">Input your questions or comments here!</textarea> <br>
-</label>
-            </div>
 
     <label for = "submit" id = "submit"></label>
     <input type = "submit" value = "Submit" name = "Submit" /> <br> <br>
-	</div>
+
 </form>
 
 <script type="text/javascript">
