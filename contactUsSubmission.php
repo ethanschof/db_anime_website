@@ -1,10 +1,9 @@
 <html>
 
-<!-- Demo.php - 3/21/2011 - Steve Hadfield (edited by Joel Coffman) -->
-<!-- Shows how to access POST and SYSTEM parameters in PHP -->
+<!-- contactUsSubmission.php - 4/13/2022 - Price Johnson (Borrowed code from Dr. Hadfield and Dr. Coffman) -->
 
  <head>
-   <title>CS 364 PEX2 Demo.php</title>
+   <title>contactUsSubmission.php</title>
    <style>
      body {font-family: Arial; color: black; }
      h1 {background-color: blue; color: white; }
@@ -13,26 +12,16 @@
 
  <body>
    <center>
-     <h1>CS364 PEX2 Demo.php Results</h1>
+     <h1>CS364 Contact Us contactUsSubmission.php Submissions</h1>
      <br />
      <br />
-
-<!-- Note the use of <?php ?> to embed PHP commands
-     and $_POST['<parameter_name>'] to get POST parameters -->
 
      <table border="1" cellpadding="3">
        <tr><th>Parameter</th><th>Value</th></tr>
        <tr><td>First Name</td><td><?php echo $_POST['firstName']; ?></td></tr>
        <tr><td>Last Name</td><td><?php echo $_POST['lastName']; ?></td></tr>
        <tr><td>Email Address</td><td><?php echo $_POST['emailAddress']; ?></td></tr>
-       <tr><td>Age</td><td><?php echo $_POST['age']; ?></td></tr>
-       <tr><td>Gender</td><td><?php echo $_POST['gender']; ?></td></tr>
-       <tr><td>Car Access</td><td>
-           <?php
-                 if (isset($_POST['carAccess']))
-                 { echo $_POST['carAccess']; }
-                 else { echo 'undefined'; }
-                                           ?></td></tr>
+       <tr><td>Question Or Comment</td><td><?php echo $_POST['questionOrComment']; ?></td></tr>
      </table>
      <br />
 
