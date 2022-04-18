@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Anime Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>My Cool Anime Website</h1>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="animelist.html">Anime</a>
+    <a href="characterinfo.html">Characters</a>
+    <a href="contactUs.html">Contact Us</a>
+    <a href="userInformation_login.html">My Account</a>
+    <div class="animation start-home"></div>
+</nav>
+<div style = "text-align: center" class="settings-page">
+    <div style = "text-align: center" class="settings-container">
+        <h1 class="page-title">Account</h1>
+        <div style = "text-align: center" class="settings-section">
+            <hr> <h2 class="settings-title">General Information</h2>
+            <div class="non-active-form">
+                <p style = "text-align: center">Joe</p><i class="fas fa-pen"></i>
+            </div>
+            <div>
+                <div class="non-active-form">
+                    <p style = "text-align: center" class="capitalize">Smith</p><i class="fas fa-pen"></i>
+                </div>
+            </div>
+            <div>
+                <div class="non-active-form">
+                    <p style = "text-align: center" class="capitalize">123-456-7890</p><i class="fas fa-pen"></i>
+                </div>
+            </div>
+            <div>
+                <div class="non-active-form">
+                    <p style = "text-align: center">test@gmail.com</p><i class="fas fa-pen"></i>
+                </div>
+            </div>
+        </div>
+        <div class="settings-section">
+            <hr> <h2 class="settings-title">My profile</h2> <br>
+            <form class="form my-form">
+                <h2 class="settings-title">Profile Picture</h2>
+                <div style = "align-items: center" class="img-upload-container">
+                    <label class="img-upload btn btn-bwm" style="background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwall-background&psig=AOvVaw1EwkPQSbyT9MqJl4wsj4al&ust=1650400600563000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCND4qsW7nvcCFQAAAAAdAAAAABAD);">
+                        <input type="file" accept=".jpg, .png, .jpeg, .gif" value="">
+                    </label>
+                    <div class="img-preview-container">
+                        <div class="img-preview" style="background-image: url('http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png');">
+                        </div>
+                    </div>
+                </div> <br>
+                <div class="form-submit">
+                    <button class="btn button full" type="submit" disabled="">Save New Picture</button> <br> <br>
+                </div>
+            </form>
+        </div>
+        <div class="settings-section">
+            <hr> <h2 class="settings-title">Password</h2>
+            <form class="form my-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input name="currentPassword" placeholder="Old Password" type="password" class="form-control" autocomplete="Old Password" value="">
+                        <span class="focus-input"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <br><input name="password" placeholder="New Password" type="password" class="form-control" autocomplete="New Password" value="">
+                        <span class="focus-input"></span>
+                    </div>
+                </div>
+                <div class="form-submit right">
+                    <br> <button class="btn button full" type="submit" disabled="">Change Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
