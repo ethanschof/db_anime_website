@@ -1,9 +1,9 @@
 <?php require '/includes/header.php' ?>
 <?php
 $servername = "localhost";
-$username = "Student";
+$username = "student";
 $password = "CompSci364";
-$db_name = "anime-website"
+$db_name = "anime-website";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db_name);

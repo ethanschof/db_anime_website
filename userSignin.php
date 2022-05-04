@@ -2,11 +2,12 @@
 error_reporting(E_ALL | E_STRICT);
 
 $servername = "localhost";
-$serverUsername = "root";
-$serverPassword = "";
+$username = "student";
+$password = "CompSci364";
+$db_name = "anime-website";
 
 // Create connection
-$conn = new mysqli($servername, $serverUsername, $serverPassword, "users");
+$conn = new mysqli($servername, $username, $password, $db_name);
 
 // Check connection
 if (!$conn) {
@@ -34,5 +35,5 @@ if (isset($_POST["submit"])) {
         $loginError = "Invalid username or password!";
     }
 }
-mysqli_close($conn);
+# mysqli_close($conn);
 ?>
