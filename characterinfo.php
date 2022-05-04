@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 // `characters` (`characterID`, `name`, `gender`, `bio`, `status`, `animeID`, `ship`, `va`, `image`)
 // Get the ID from the URL
-$id = $_SESSION["characterID"];
+$id = $_GET["characterID"];
 
 // Prepare the sql query
 $query = $conn->prepare('SELECT * FROM characters WHERE characterID = ?');
