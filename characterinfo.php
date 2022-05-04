@@ -49,7 +49,7 @@ echo '<section class="descriptionAnime">
     <h3>Bio</h3>
     '. $bio .'
 </div>
-</section>'
+</section>';
 
 ?>
 <?php require '/includes/footer.php' ?>
