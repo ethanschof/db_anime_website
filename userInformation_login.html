@@ -1,3 +1,10 @@
+<!--Start Session so that user is remembered as he traverses the pages -->
+<?php
+  session_start();
+ ?>
+
+<?php include 'userSignin.php';?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -47,7 +54,7 @@
             </div> <br>
 
             <div className="formSignup__row">
-                <button>Login</button> <br>
+                <input type="submit" name="submit" value="Login"> <br>
 
                 <h5><a href="userRegistration.html">Don't Have An Account?</a></h5>
 
