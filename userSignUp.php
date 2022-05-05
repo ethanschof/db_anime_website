@@ -1,3 +1,4 @@
+<?php require 'includes/header.php' ?>
 <?php
 
 // Show signUp/Registration html page
@@ -67,8 +68,8 @@ $loginError = "";
 
 if (isset($_POST["submit"])) {
     $username = $conn->real_escape_string($_POST["username"]);
-    $stmt = $conn->prepare("INSERT INTO 'users' ('userID', 'username', 'password', 'email', `bio`, `friends`, `animelist`, `favorites`) VALUES (NEWID(), $_POST[‘username’], $_POST[‘password’], $_POST[‘email’], '', 0, 0, 0)");
-    $stmt->bind_param("s", $username);
+    $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $username, $password, $email);
     $stmt->bind_result($password);
     $stmt->execute();
     $stmt->fetch();
@@ -85,3 +86,4 @@ if (isset($_POST["submit"])) {
 }
 # mysqli_close($conn);
 ?>
+<?php require 'includes/footer.php' ?>
