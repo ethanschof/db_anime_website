@@ -19,7 +19,7 @@ echo
       <a href="index.php">Home</a>
       <a href="animelist.php">Anime</a>
       <a href="characterinfo.php?characterID=2">Characters</a>
-      <a href="contactUs.php">Contact Us</a>';
+      <a href="founders.php">Founders</a>';
       if (isset($_SESSION["loggedIn"])) {
         if ($_SESSION["loggedIn"] = "true"){
             echo '<a href="userSignedIn.php">My Account</a>';

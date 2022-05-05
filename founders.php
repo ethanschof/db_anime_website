@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Anime Database</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<!--Start menu header -->
-<h1>My Cool Anime Website</h1>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="animelist.html">Anime</a>
-  <a href="characterinfo.html">Characters</a>
-  <a href="contactUs.html">Contact Us</a>
-  <a href="userInformation_login.html">My Account</a>
-    <div class="animation start-home"></div>
-</nav>
-<!--Page Description-->
+<?php require 'includes/header.php' ?>
+<?php echo '
 <br> <br>
 <h2>Meet the Founders</h2>
 
@@ -38,9 +21,6 @@
     <img class = "contact-img" src="Price Johnson.png " alt="Johnson" style="width:100%">
   </div>
 </div>
-
-</body>
-
-
-</body>
-</html>
+';
+ ?>
+<?php require 'includes/footer.php' ?>
