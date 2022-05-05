@@ -1,4 +1,37 @@
 <?php
+
+// Show SignIn html page
+echo '"<form className="formSignup" style = "text-align: center" action="userSignin.php" method="POST">
+    <div>
+        <div className="formSignup__title-row">
+            <h3 style = "text-align: center">Log In</h3>
+        </div> <br>
+
+        <div className="formSignup__body">
+            <div className="formSignup__row">
+                <label>
+                    <span>Username</span>
+                    <input type="text" name="username" placeholder="Username" autoFocus />
+                </label>
+            </div> <br>
+
+            <div className="formSignup__row">
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Password" />
+                </label>
+            </div> <br>
+
+            <div className="formSignup__row">
+                <input type="submit" name="submit" value="Login"> <br>
+
+                <h5><a href="userRegistration.html">Do Not Have An Account?</a></h5>
+
+            </div>
+        </div>
+    </div>
+</form>"';
+
 error_reporting(E_ALL | E_STRICT);
 
 $servername = "localhost";
