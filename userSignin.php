@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
     if (password_verify($_POST['password'], $password)) {
         session_start();
         $_SESSION["loggedIn"] = "true";
-        header("Location: userSignedIn.html");
+        header('Location: userSignedIn.php');
     }
     else {
         $loginError = "Invalid username or password!";
