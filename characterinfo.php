@@ -1,8 +1,8 @@
-<?php require '/includes/header.php' ?>
+<?php require 'includes/header.php' ?>
 <?php
 $servername = "localhost";
-$username = "student";
-$password = "CompSci364";
+$username = "root";
+$password = "";
 $db_name = "anime-website";
 
 // Create connection
@@ -21,35 +21,37 @@ $id = $_GET["characterID"];
 $query = $conn->prepare('SELECT * FROM characters WHERE characterID = ?');
 
 // This says we are expecting id to be an integer, use s for string
-$query->bind_param("i", $id)
+$query->bind_param("i", $id);
 
 // Run the query
-$query->execute()
+$query->execute();
 
 // Bind the result variables
-$query->bind_result($characterID, $name, $gender, $bio, $status, $animeID, $ship, $va, $image)
+$query->bind_result($characterID, $name, $gender, $bio, $status, $animeID, $ship, $va, $image);
 
-echo '<section class="descriptionAnime">
-  <div class="descriptionAnime__left">
-    <h3 class="descriptionAnime__left-title">' . $name . '</h3>
-    <img src="'. $image .'" alt="'. $name .'" title="'. $name .'">
-    <div class="descriptionAnime__Information">
-      <h3>Information</h3>
-      <p>Gender: <span>';
-      if ($gender == "M"){
-        echo 'Male';
-      }
-      else {
-        echo 'Female';
-      }
-      echo '</span></p>
+while ($query->fetch()){
+  echo '<section class="descriptionAnime">
+    <div class="descriptionAnime__left">
+      <h3 class="descriptionAnime__left-title">' . $name . '</h3>
+      <img src="'. $image .'" alt="'. $name .'" title="'. $name .'">
+      <div class="descriptionAnime__Information">
+        <h3>Information</h3>
+        <p>Gender: <span>';
+        if ($gender == "M"){
+          echo 'Male';
+        }
+        else {
+          echo 'Female';
+        }
+        echo '</span></p>
+      </div>
     </div>
+    <div class="descriptionAnime__right">
+      <h3>Bio</h3>
+      <p>'. $bio .'</p>
   </div>
-  <div class="descriptionAnime__right">
-    <h3>Bio</h3>
-    '. $bio .'
-</div>
-</section>';
+  </section>';
+}
 
 ?>
-<?php require '/includes/footer.php' ?>
+<?php require 'includes/footer.php' ?>

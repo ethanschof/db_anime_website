@@ -1,8 +1,8 @@
-<?php require '/includes/header.php' ?>
+<?php require 'includes/header.php' ?>
 <?php
 $servername = "localhost";
-$username = "student";
-$password = "CompSci364";
+$username = "root";
+$password = "";
 $db_name = "anime-website";
 
 // Create connection
@@ -40,7 +40,7 @@ while ($row = $result->fetch_assoc()) {
   echo '<div class="listAnime__anime">
     <h3>' . $row["title"] . '</h3>
     <a class="links" href="anime-info.php?animeID='. $row["anime_id"] .'">
-      <img src="'.$row["title"].'" alt="'.$row["title"].'" title="'.$row["title"].'"></a>
+      <img src="'.$row["image"].'" alt="'.$row["title"].'" title="'.$row["title"].'"></a>
     </div>';
 }
 
@@ -49,4 +49,4 @@ echo '</section>
 
 
  ?>
-<?php require '/includes/footer.php' ?>
+<?php require 'includes/footer.php' ?>
