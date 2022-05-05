@@ -75,7 +75,15 @@ echo '<h3>Characters & Voice Actors</h3>
 <div class="detail-characters-list clearfix"><div class="left-column fl-l divider" style="width:392px;">';
 
 while($this_character = $character_result->fetch_assoc()) {
-  $vaquery = $conn->prepare('SELECT voiceactor.vaID, voiceactor.name FROM voiceactor INNER JOIN voicedby ON voiceactor.vaID = voicedby.vaID WHERE voicedby.characterID = ?')
+
+  $vaID = 0;
+  $vaName = "";
+
+  // get voice actor for this character
+  $vaquery = $conn->prepare('SELECT voiceactor.vaID, voiceactor.name FROM voiceactor INNER JOIN voicedby ON voiceactor.vaID = voicedby.vaID WHERE voicedby.characterID = ?');
+  $vaquery->bind_param("i", $this_character["characterID"]);
+  $vaquery->execute();
+  $vaquery->bind_result($vaID, $vaName);
 
   echo '<table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tbody>
@@ -93,24 +101,31 @@ while($this_character = $character_result->fetch_assoc()) {
         <div class="spaceit_pad">
           <small>Main</small>
         </div>
-      </td>
-      <td align="right" valign="top" class="borderClass">
-        <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-          <td class="va-t ar pl4 pr4">
-            <a href="https://myanimelist.net/people/11/Kouichi_Yamadera">Yamadera, Kouichi</a><br>
-            <small>Japanese</small>
-          </td>
-          <td valign="top">
-          </td>
-        </tr>
-        </tbody>
-        </table>
-      </td>
-    </tr>
+      </td>';
+      while ($vaquery->fetch()) {
+        echo '<td align="right" valign="top" class="borderClass">
+          <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+            <td class="va-t ar pl4 pr4">
+              <a href="">'. $vaName .'</a><br>
+              <small>Japanese</small>
+            </td>
+            <td valign="top">
+            </td>
+          </tr>
+          </tbody>
+          </table>
+        </td>';
+      }
+
+    echo '</tr>
   </tbody>
-  </table>'
+  </table>';
 }
 
+echo '</div>
+</section>
+</div>
+</div>';
 
 
 function test_input($data) {
