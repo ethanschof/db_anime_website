@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
     if (strcmp($_POST['password'], $_POST['confirmPassword']) == 0) {
         session_start();
         $_SESSION["loggedIn"] = "true";
-        header();
+        header('Location: userSignedIn.php');
     }
     else {
         $loginError = "Passwords are not the same!";
