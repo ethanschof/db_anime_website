@@ -63,7 +63,7 @@ if (isset($_POST["submit"])) {
     if (password_verify($_POST['password'], $password)) {
         session_start();
         $_SESSION["loggedIn"] = "true";
-        header('Location: userSignedIn.php');
+        header('Location: localhost/anime-website/userSignedIn.php');
     }
     else {
         $loginError = "Invalid username or password!";

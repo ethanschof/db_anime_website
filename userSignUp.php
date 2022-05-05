@@ -76,7 +76,7 @@ if (isset($_POST["submit"])) {
     if (strcmp($_POST['password'], $_POST['confirmPassword']) == 0) {
         session_start();
         $_SESSION["loggedIn"] = "true";
-        header('Location: userSignedIn.php');
+        header('Location: localhost/anime-website/userSignedIn.php');
         exit();
     }
     else {
