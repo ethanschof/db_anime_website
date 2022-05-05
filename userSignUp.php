@@ -2,7 +2,9 @@
 <?php
 
 // Show signUp/Registration html page
-echo '"<form className="formSignup" style = "text-align: center" action="userSignUp.php" method="POST">
+echo '<form className="formSignup" style="text-align: center" action="';
+echo htmlspecialchars($_SERVER["PHP_SELF"]);
+echo '" method="POST">
     <div>
         <div className="formSignup__title-row">
             <h3 style = "text-align: center">User Registration</h3> <br>

@@ -1,3 +1,4 @@
+<?php require 'includes/header.php' ?>
 <?php
 
 $servername = "localhost";
@@ -94,3 +95,4 @@ echo '"<div style = "text-align: center" class="settings-page">
 </div>"';
 
 ?>
+<?php require 'includes/footer.php' ?>

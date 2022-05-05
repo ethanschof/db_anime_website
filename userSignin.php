@@ -1,7 +1,10 @@
+<?php require 'includes/header.php' ?>
 <?php
 
 // Show SignIn html page
-echo '"<form className="formSignup" style = "text-align: center" action="userSignin.php" method="POST">
+echo '<form className="formSignup" style = "text-align: center" action="';
+echo htmlspecialchars($_SERVER["PHP_SELF"]);
+echo '" method="POST">
     <div>
         <div className="formSignup__title-row">
             <h3 style = "text-align: center">Log In</h3>
@@ -71,3 +74,5 @@ if (isset($_POST["submit"])) {
 }
 # mysqli_close($conn);
 ?>
+<?php require 'includes/footer.php' ?>
+
