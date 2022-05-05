@@ -114,6 +114,22 @@ p {
     font-size: 16px;
 }
 
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+   display: flex;
+
+}
+
+.contact-img {
+    width: 256px;
+    height: 256px;
+}
+
+.column {
+   flex: 33.33%;
+   padding: 5px;
+}
+
 span {
     color: #2BD6B4;
 }

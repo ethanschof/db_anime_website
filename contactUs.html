@@ -17,70 +17,27 @@
     <div class="animation start-home"></div>
 </nav>
 <!--Page Description-->
+<br> <br>
+<h2>Meet the Founders</h2>
 
-<h3>Contact Us</h3> <br>
-
-<form action = "contactUsSubmission.php" method = "post" onsubmit = "return validateForm()">
-
-    <label for = "firstName">First Name</label>
-    <input type = "text" id = "firstName" name = "firstName" /> <br> <br>
-
-    <label for = "lastName">Last Name</label>
-    <input type = "text" id = "lastName" name = "lastName" /> <br> <br>
-
-    <label for = "emailAddress">Email</label>
-    <input type = "text" id = "emailAddress" name = "emailAddress" /> <br> <br>
-
-    <label for="questionOrComment"></label>
-    <textarea id="questionOrComment" name="questionOrComment" rows="4" cols="50">Input your questions or comments here!</textarea> <br>
-
-    <label for = "submit" id = "submit"></label>
-    <input type = "submit" value = "Submit" name = "Submit" /> <br> <br>
-
-</form>
-
-<script type="text/javascript">
-    function validateForm(){
-
-
-        if(!inputCheck(document.getElementById('firstName')) || !inputCheck(document.getElementById('lastName')) || firstName.value.length >= 50 || lastName.value.length >= 50)
-        {
-            return false;
-        }
-        if(!validateEmailAddress(document.getElementById('emailAddress').value.trim()) || emailAddress.value.length >= 50)
-        {
-            return false;
-        }
-        if (!inputCheck(document.getElementById('questionOrComment')) || questionOrComment.value.length >= 50) {
-            return false;
-        }
-
-        return true;
-
-
-    }
-
-    function inputCheck(text){
-        var letters = /^[A-Za-z\s-]+$/;
-
-        if(text.value.match(letters)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    function validateEmailAddress(emailAddress){
-        var emailParameters = /^[a-z0-9]+(?:[-\._]?[a-z0-9]+)*@(?:[a-z0-9]+(?:-?[a-z0-9]+)*\.)+[a-z]+$/i;
-
-        return (emailParameters.test(emailAddress) || isEmpty(emailAddress))
-    }
-
-    function isEmpty(str){
-        return (str.length === 0 || !str.trim());
-    }
-</script>
+<div class="row">
+  <div class="column">
+    <h2> Capt. Lane </h2>
+    <img class = "contact-img" src="Capt Lane.jpg" alt="Lane" style="width:100%">
+  </div>
+  <div class="column">
+    <h2> Ethan Schofield </h2>
+    <img class = "contact-img" src="Ethan Schofield.jpg" alt="Schofield" style="width:100%">
+  </div>
+  <div class="column">
+    <h2> Joseph Daniel </h2>
+    <img class = "contact-img" src="Joseph Daniel.jpg" alt="Daniel" style="width:100%">
+  </div>
+  <div class="column">
+    <h2> Price Johnson </h2>
+    <img class = "contact-img" src="Price Johnson.png " alt="Johnson" style="width:100%">
+  </div>
+</div>
 
 </body>
 
