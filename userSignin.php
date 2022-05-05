@@ -22,7 +22,6 @@ if (!$conn) {
 $loginError = "";
 
 if (isset($_POST["username"])) {
-  echo $_POST["username"];
 
     $username = $conn->real_escape_string($_POST["username"]);
     $stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?");

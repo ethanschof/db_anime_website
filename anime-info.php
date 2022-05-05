@@ -32,7 +32,7 @@ while($query->fetch()){
     <div class="App">
       <section class="descriptionAnime">
         <div class="descriptionAnime__left">
-          <h2 class="descriptionAnime__left-title">Cowboy Bebop</h2>
+          <h2 class="descriptionAnime__left-title">'. $title .'</h2>
           <img src="'. $image .'" alt="'. $title .'" title="'. $title .'">
           <div class="descriptionAnime__Information">
             <h3>Information</h3>
