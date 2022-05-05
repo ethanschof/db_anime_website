@@ -66,15 +66,16 @@ echo "Connected successfully";
 
 $loginError = "";
 
-if (isset($_POST["submit"])) {
-    $username = $conn->real_escape_string($_POST["username"]);
-    $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $password, $email);
-    $stmt->bind_result($password);
-    $stmt->execute();
-    $stmt->fetch();
-    $stmt->close();
+if (isset($_POST["username"])) {
     if (strcmp($_POST['password'], $_POST['confirmPassword']) == 0) {
+        $username = $conn->real_escape_string($_POST["username"]);
+        $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $password, $email);
+        $stmt->bind_result($password);
+        $stmt->execute();
+        //$stmt->fetch();
+        $stmt->close();
+
         session_start();
         $_SESSION["loggedIn"] = "true";
         header('Location: localhost/anime-website/userSignedIn.php');
@@ -84,6 +85,6 @@ if (isset($_POST["submit"])) {
         $loginError = "Passwords are not the same!";
     }
 }
-# mysqli_close($conn);
+//mysqli_close($conn);
 ?>
 <?php require 'includes/footer.php' ?>
