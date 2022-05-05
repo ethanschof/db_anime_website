@@ -75,19 +75,21 @@ echo '<h3>Characters & Voice Actors</h3>
 <div class="detail-characters-list clearfix"><div class="left-column fl-l divider" style="width:392px;">';
 
 while($this_character = $character_result->fetch_assoc()) {
+  $vaquery = $conn->prepare('SELECT voiceactor.vaID, voiceactor.name FROM voiceactor INNER JOIN voicedby ON voiceactor.vaID = voicedby.vaID WHERE voicedby.characterID = ?')
+
   echo '<table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tbody>
     <tr>
       <td valign="top" width="27" class="ac borderClass">
         <div class="picSurround">
           <a href="characterinfo.php?characterID='. $this_character["characterID"] .'" class="fw-n">
-            <img alt="Spiegel, Spike" width="42" height="62" data-src="https://cdn.myanimelist.net/r/42x62/images/characters/4/50197.webp?s=c68236223866e244007ec519bf9ed325" data-srcset="https://cdn.myanimelist.net/r/42x62/images/characters/4/50197.webp?s=c68236223866e244007ec519bf9ed325 1x, https://cdn.myanimelist.net/r/84x124/images/characters/4/50197.webp?s=954af18b36c6f849f82641e8751daf57 2x" class=" lazyloaded" srcset="https://cdn.myanimelist.net/r/42x62/images/characters/4/50197.webp?s=c68236223866e244007ec519bf9ed325 1x, https://cdn.myanimelist.net/r/84x124/images/characters/4/50197.webp?s=954af18b36c6f849f82641e8751daf57 2x" src="https://cdn.myanimelist.net/r/42x62/images/characters/4/50197.webp?s=c68236223866e244007ec519bf9ed325">
+            <img alt="'. $this_character["name"] .'" width="42" height="62"  src="'. $this_character["image"] .'">
           </a>
         </div>
       </td>
       <td valign="top" class="borderClass">
         <h3 class="h3_characters_voice_actors">
-        <a href="characterinfo.html">Spiegel, Spike</a></h3>
+        <a href="characterinfo.php?characterID='. $this_character["characterID"] .'">'. $this_character["name"] .'</a></h3>
         <div class="spaceit_pad">
           <small>Main</small>
         </div>
