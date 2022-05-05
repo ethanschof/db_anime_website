@@ -1,7 +1,5 @@
 <?php require 'includes/header.php' ?>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 $servername = "localhost";
 $username = "root";
@@ -45,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["genre"] != "all" && !isset($
     $result = $conn->query($query);
   } else {
     $search = "%" . $search . "%";
-    
+
     $query = $conn->prepare('SELECT anime_id, title, image FROM animes WHERE UPPER(TRIM(title)) LIKE UPPER(TRIM(?)) ORDER BY title ASC');
 
     $query->bind_param("s", $search);
