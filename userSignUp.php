@@ -2,8 +2,8 @@
 error_reporting(E_ALL | E_STRICT);
 
 $servername = "localhost";
-$username = "student";
-$password = "CompSci364";
+$username = "root";
+$password = "";
 $db_name = "anime-website";
 
 // Create connection
