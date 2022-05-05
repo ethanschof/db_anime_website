@@ -30,6 +30,7 @@ echo '"<form className="formSignup" style = "text-align: center" action="userSig
             </div>
         </div>
     </div>
+    </div>
 </form>"';
 
 error_reporting(E_ALL | E_STRICT);
