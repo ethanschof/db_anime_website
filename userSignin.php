@@ -2,8 +2,8 @@
 error_reporting(E_ALL | E_STRICT);
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "student";
+$password = "CompSci364";
 $db_name = "anime-website";
 
 // Create connection
@@ -20,7 +20,7 @@ $loginError = "";
 
 if (isset($_POST["submit"])) {
     $username = $conn->real_escape_string($_POST["username"]);
-    $stmt = $conn->prepare("SELECT Password FROM user_logons WHERE Username = ? LIMIT 1");
+    $stmt = $conn->prepare("SELECT password FROM users WHERE Username = ? LIMIT 1");
     $stmt->bind_param("s", $username);
     $stmt->bind_result($password);
     $stmt->execute();
