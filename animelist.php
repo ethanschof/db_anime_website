@@ -1,5 +1,8 @@
 <?php require 'includes/header.php' ?>
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,23 +17,102 @@ if ($conn->connect_error) {
 }
 
 //`animes` (`anime_id`, `title`, `synopsis`, `image`, `source_type`, `num_episodes`, `status`, `start_date`, `end_date`, `season`, `studios`, `genres`, `popularity_rank`, `members_count`, `favorites_count`)
+$genre = "";
+$search = "";
+// Different query if there is a sort
+// genre no search
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["genre"] != "all" && !isset($_POST["search"])) {
+  $genre = test_input($_POST["genre"]);
 
-$query = "SELECT anime_id, title, image FROM animes ORDER BY title ASC";
+  $genre = "%" . $genre . "%";
 
-$result = $conn->query($query);
+  $query = $conn->prepare('SELECT anime_id, title, image, genres FROM animes WHERE UPPER(TRIM(genres)) LIKE UPPER(TRIM(?)) ORDER BY title ASC');
+
+  $query->bind_param("s", $genre);
+
+  $query->execute();
+
+  $result = $query->get_result();
+
+ // search no genre
+} elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["genre"] == "all" && isset($_POST["search"])) {
+  $search = test_input($_POST["search"]);
+
+  // fixes case where search is empty but set
+  if ($search == "") {
+    $query = "SELECT anime_id, title, image FROM animes ORDER BY title ASC";
+
+    $result = $conn->query($query);
+  } else {
+    $search = "%" . $search . "%";
+    
+    $query = $conn->prepare('SELECT anime_id, title, image FROM animes WHERE UPPER(TRIM(title)) LIKE UPPER(TRIM(?)) ORDER BY title ASC');
+
+    $query->bind_param("s", $search);
+
+    $query->execute();
+
+    $result = $query->get_result();
+  }
+
+  // search and genre
+} elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["genre"] != "all" && isset($_POST["search"])) {
+  $genre = test_input($_POST["genre"]);
+  $search = test_input($_POST["search"]);
+
+// fixes case where search is empty but set
+  if ($search == "") {
+    $genre = "%" . $genre . "%";
+
+    $query = $conn->prepare('SELECT anime_id, title, image, genres FROM animes WHERE UPPER(TRIM(genres)) LIKE UPPER(TRIM(?)) ORDER BY title ASC');
+
+    $query->bind_param("s", $genre);
+
+    $query->execute();
+
+    $result = $query->get_result();
+  } else {
+    $genre = "%" . $genre . "%";
+    $search = "%" . $search . "%";
+
+    $query = $conn->prepare('SELECT anime_id, title, image, genres FROM animes WHERE UPPER(TRIM(genres)) LIKE UPPER(TRIM(?))
+    AND UPPER(TRIM(title)) LIKE UPPER(TRIM(?)) ORDER BY title ASC');
+
+    $query->bind_param("ss", $genre, $search);
+
+    $query->execute();
+
+    $result = $query->get_result();
+  }
+
+}
+
+// none
+else {
+  $query = "SELECT anime_id, title, image FROM animes ORDER BY title ASC";
+
+  $result = $conn->query($query);
+}
+
 
 echo '<div class="listofAnime">
   <h3>List of animes</h3>
   <!--INput for searching and sorting by genre-->
-  <div class="Search"><input placeholder="Search Anime" type="text">
-    <select class="select" name="genre">
-      <option disabled selected value> -- Select a Genre -- </option>
-      <option value="genre1">Action</option>
-      <option value="genre2">Comedy</option>
-      <option value="genre3">Romance</option>
-      <option value="genre4">Slice of Life</option>
-      <option value="genre5">Fantasy</option>
+  <div class="Search">
+  <form method="post" action="';
+  echo htmlspecialchars($_SERVER["PHP_SELF"]);
+  echo '">
+  <input name="search" placeholder="Search Anime" type="text">
+    <select class="select" name="genre" onchange="this.form.submit()">
+      <option selected value="all"> -- Select a Genre -- </option>
+      <option value="action">Action</option>
+      <option value="comedy">Comedy</option>
+      <option value="romance">Romance</option>
+      <option value="slice of life">Slice of Life</option>
+      <option value="fantasy">Fantasy</option>
     </select>
+    <input type="submit" name="submit" value="Submit">
+    </form>
   </div>
   <section class="listAnime">';
 
@@ -47,6 +129,14 @@ while ($row = $result->fetch_assoc()) {
 echo '</section>
 </div>';
 
+
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
  ?>
 <?php require 'includes/footer.php' ?>

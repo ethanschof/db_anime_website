@@ -17,15 +17,14 @@ echo
       <a href="index.php">Home</a>
       <a href="animelist.php">Anime</a>
       <a href="characterinfo.php?characterID=2">Characters</a>
-      <a href="contactUs.php">Contact Us</a>
-      <a href="userSignedIn.html">My Account</a>';
-
-        // if ($_SESSION["loggedIn"] = "true"){
-        //     echo '<a href="userSignedIn.html">My Account</a>';
-        // }
-        // else {
-        //     echo '<a href="userInformation_login.html">My Account</a>';
-        // }
+      <a href="contactUs.php">Contact Us</a>';
+      if (isset($_SESSION["loggedIn"])) {
+        if ($_SESSION["loggedIn"] = "true"){
+            echo '<a href="userSignedIn.html">My Account</a>';
+        }
+      } else {
+          echo '<a href="userInformation_login.html">My Account</a>';
+      }
 
 echo ' <div class="animation start-home"></div>
 </nav>';

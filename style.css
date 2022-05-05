@@ -162,6 +162,7 @@ span {
     min-height: 40px;
     margin-right: 10px;
     margin-left: 10px;
+    padding-bottom: 10px;
 }
 
 /*Anime description css taken from https://github.com/SergioCuadrado/MyAnimeList/blob/master/src/app/assets/styles/containers/DescriptionAnime.css*/
