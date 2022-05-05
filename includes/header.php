@@ -1,6 +1,8 @@
 <?php
 # Start Session so that user is remembered as he traverses the pages
-session_start();
+if (!isset($_SESSION)) {
+   session_start();
+}
 
 echo
 '<!DOCTYPE html>
@@ -20,10 +22,10 @@ echo
       <a href="contactUs.php">Contact Us</a>';
       if (isset($_SESSION["loggedIn"])) {
         if ($_SESSION["loggedIn"] = "true"){
-            echo '<a href="userSignedIn.html">My Account</a>';
+            echo '<a href="userSignedIn.php">My Account</a>';
         }
       } else {
-          echo '<a href="userInformation_login.html">My Account</a>';
+          echo '<a href="userSignin.php">My Account</a>';
       }
 
 echo ' <div class="animation start-home"></div>
