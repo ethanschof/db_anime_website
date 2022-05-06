@@ -76,7 +76,7 @@ echo '" method="POST">
                   echo '<h5 color="#FF0000">' . $loginError . '</h5>';
                 }
                 echo '
-                <h5><a href="userRegistration.html">Do Not Have An Account?</a></h5>
+                <h5><a href="userSignUp.php">Do Not Have An Account?</a></h5>
 
             </div>
         </div>
