@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 // `characters` (`characterID`, `name`, `gender`, `bio`, `status`, `animeID`, `ship`, `va`, `image`)
 // Get the ID from the URL
-$id = $_GET["characterID"];
+$id = test_input($_GET["characterID"]);
 
 // Prepare the sql query
 $query = $conn->prepare('SELECT * FROM characters WHERE characterID = ?');
@@ -51,6 +51,13 @@ while ($query->fetch()){
       <p>'. $bio .'</p>
   </div>
   </section>';
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 
 ?>
