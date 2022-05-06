@@ -120,10 +120,11 @@ p {
 
 }
 
-.contact-img {
-    width: 256px;
-    height: 256px;
+.contact-img{
+  width:256px;
+  height:768px;
 }
+
 
 .column {
    flex: 33.33%;
