@@ -1,0 +1,17 @@
+DOCUMENTATION:
+https://stackoverflow.com/questions/5440197/how-to-pass-a-php-variable-using-the-url
+
+https://stackoverflow.com/questions/12546915/getting-data-from-previous-page
+https://stackoverflow.com/questions/35120482/get-id-from-php-url-and-use-in-a-query
+
+https://www.cuehosting.com/forum/viewtopic.php?t=6
+
+https://stackoverflow.com/questions/24459984/php-hide-url-get-parameters
+
+https://smallbusiness.chron.com/rid-sql-locks-26448.html
+
+https://www.siteground.com/tutorials/php-mysql/display-table-data/
+
+https://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php
+https://www.php.net/mysqli.prepare
+https://www.techfry.com/php-tutorial/how-to-execute-mysql-query-in-php

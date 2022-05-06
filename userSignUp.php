@@ -88,7 +88,7 @@ echo '" method="POST">
             <div className="formSignup__row">
                 <input type = submit name="submit" value="Register"></input>
 
-                <h5><a href="userInformation_login.html">Return To Login</a></h5>
+                <h5><a href="userSignin.php">Return To Login</a></h5>
 
             </div>
         </div>
